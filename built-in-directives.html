@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Built-in Directives</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  </head>
+  <body ng-init="names=['Harry', 'Ron', 'Hermione', 'Sirius', 'Hedwig', 'Tonks']">
+
+    <h1>Built-in Directives</h1>
+
+    <ul>
+      <li ng-repeat="name in names">
+        {{name}}
+       </li>
+    </ul>
+
+    <ul ng-repeat='name in names'>
+      <li>{{name}}</li>
+    </ul>
+
+    <h2>Symbols</h2>
+    <div ng-init="symbols=['&spades;', '&clubs;', '&hearts;', '&diams;']">
+    </div>
+
+    <ul>
+      <li ng-repeat="symbol in symbols">
+        {{symbol}}
+       </li>
+    </ul>
+
+    <h2>Duplicates</h2>
+
+    <div ng-init="numbers=[1,1,2,5,6,9,9,9] track by $index"></div>
+
+    <!-- [1,1,2,5,6,9,9,9] -->
+
+    <ul>
+      <li ng-repeat="number in numbers">
+        {{number}}
+      </li>
+    </ul>
+
+    <h2>Keys in an Element</h2>
+
+    <div
+      ng-init="obj={
+        first: 'Elana',
+        last: 'Kopelevich',
+        dob: '06/28/1984'}">
+    </div>
+
+    <ul>
+      <li ng-repeat="element in obj">
+        {{ element }}
+      </li>
+    </ul>
+
+    <h2>Show and Hide</h2>
+    <ul>
+      <li ng-show='3 + 4 == 5'>
+        3 + 4 isn't 5, don't show
+      </li>
+
+      <li ng-show='3 + 4 == 7'>
+        3 + 4 is 7, do show
+      </li>
+
+      <li ng-hide='3 + 4 == 5'>
+          3 + 4 isn't 5, don't hide
+      </li>
+
+      <li ng-hide='3 + 4 == 7'>
+        3 + 4 is 7, do hide
+      </li>
+    </ul>
+
+    <h2>Password Validator</h2>
+    <form>
+      <input type="text" ng-model="password">
+      <p>Your password is {{ password.length }} characters.</p>
+
+      <p ng-show="password.length < 6">Password is invalid!</p>
+      <input ng-show="password.length >== 6" type="button" name="name" value="Sign Up!">
+    </form>
+
+    <h2>ng-class</h2>
+
+    <article>
+      <div ng-class='{highlight: 4 + 4 == 8}'> 4 + 4 = 8</div>
+      <div ng-class='{highlight: 4 + 4 == 10}'>4 + 4 = 10</div>
+    </article>
+
+
+    <h2>Sign up Page</h2>
+    <form>
+      <input type="text" ng-model="password">
+      <p ng-class="{invalid: password.length < 6, valid: password.length > 5}">Your password is {{ password.length }} characters.</p>
+
+      <p ng-show="password.length < 6">Password is invalid!</p>
+      <input ng-show="password.length >== 6" type="button" value="Sign Up!">
+    </form>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  </body>
+</html>

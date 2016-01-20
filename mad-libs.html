@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mad Libs</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+
+    <h2>Mad Libs</h2>
+
+    <h3>Please fill out the following!</h3>
+    <form class="" action="" method="post">
+      <label for="boy_name">Boy's Name</label>
+      <input class="form-control" type="text" ng-model="boy_name" placeholder="Enter an adjective">
+      <label for="adjective">Adjective</label>
+      <input class="form-control" type="text" ng-model="adjective" placeholder="Enter an adjective">
+      <label for="plural_noun">Plural Noun</label>
+      <input class="form-control" type="text" ng-model="plural_noun" placeholder="Enter a plural noun">
+      <label for="plural_noun_2">Plural Noun</label>
+      <input class="form-control" type="text" ng-model="plural_noun_2" placeholder="Enter a plural noun">
+      <label for="insect">An insect</label>
+      <input class="form-control" type="text" ng-model="insect" placeholder="Enter a plural insect">
+      <label for="plural_noun">Plural Noun</label>
+      <input class="form-control" type="text" ng-model="plural_noun_3" placeholder="Enter a plural noun">
+      <label for="verb">A verb ending in s</label>
+      <input class="form-control" type="text" ng-model="verb" placeholder="Enter a verb ending in s">
+      <input class="btn btn-primary" type="submit" value="Generate!">
+    </form>
+
+    <article>
+      <h3>Mad with the Libs</h3>
+
+      <p>
+        I'm in love with {{boy_name | uppercase}}. He is so {{adjective | uppercase }}! He has big flat {{plural_noun | uppercase }}, and when our {{plural_noun_2 | uppercase }} meet, I get {{insect | uppercase }} in my stomach. I've fallen for him like a ton of {{plural_noun_3 | uppercase }}, and he {{verb | uppercase }} me. But I think he's got another girlfriend. What should I do?
+      </p>
+      <input class="btn btn-primary" type="submit" value="Play Again?">
+    </article>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  </body>
+</html>

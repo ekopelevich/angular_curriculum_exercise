@@ -3,15 +3,67 @@
   <head>
     <meta charset="utf-8">
     <title>{{ greeting }} World</title>
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   </head>
   <body>
+    <!-- With traditional JS... -->
     <input class="name" type="text" placeholder="What is your name?">
     <button class="name-submit" type="input">Submit</button>
     <h1 class="greeting">Hello </h1>
-
     <input type="text" placeholder="What is your name?" ng-model="name">
     <h1>Hello {{name}}</h1>
+
+
+    <h2>Filters!</h2>
+
+    <input type="type" ng-model="hello">
+    <p>Yelling: {{hello | uppercase}}</p>
+    <p>Whispering: {{hello | lowercase}}</p>
+
+    <h2>Filter Currency in Euros</h2>
+
+    <p>{{3.14159265359 | currency : "€"}}</p>
+
+
+    <h2>How many digits of Pi do you want?</h2>
+
+    <select ng-model="digits" ng-init="digits='3'">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <p>
+      Here you go! The first
+      <ng-pluralize count="digits"
+                       when="{1: '1 digit',
+                          'other': '{{digits}} digits'}">
+      </ng-pluralize>
+       of Pi!
+     </p>
+
+    <p>{{3.14159265359 | number: digits }}</p>
+
+    <h2>Super Useful Tip Calculator</h2>
+    <input type="number" ng-model="amount">
+    <p>How much do you want to tip?</p>
+    <select ng-model="tip">
+      <option value="10">10%</option>
+      <option value="15">15%</option>
+      <option value="20">20%</option>
+    </select>
+
+    <h3>Subtotal: {{amount | currency}}</h3>
+    <h3>Tip: {{amount * tip/100 | currency}}  </h3>
+
+    <h2>Prove the Angular Context is not the Window Object</h2>
+
+    <p>Angular Context: {{$scope}}</p>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>

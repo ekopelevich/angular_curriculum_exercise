@@ -1,0 +1,27 @@
+h1, h2, form, .btn, p, article, header, main, .sort {
+  margin: 20px;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.invalid {
+  color: red;
+}
+
+.valid {
+  color: green;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 200px;
+}
+
+.price {
+  color: orange;
+}
