@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="firstApp">
+  <head>
+    <title>Controllers</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
 
+    <script type="text/javascript" src="app.js"></script>
+
+  </head>
+  <body>
+    <div ng-controller="MyFirstController">
+      <h1>My name is: {{ name }}</h1>
+      <input ng-model="name" type="text" placeholder="What is your name">
+    </div>
+    <div ng-controller="ExerciseController">
+      <h3>My favorite color: {{ favColor }} </h3>
+      <h3>Seconds in a Century: {{ secondsInACentury }} </h3>
+      <h3>Today: {{ rightNow | date }} </h3>
+    </div>
+
+  </body>
+</html>
