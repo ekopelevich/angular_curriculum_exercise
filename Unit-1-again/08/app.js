@@ -131,3 +131,20 @@ app.controller('ReplayColorsController', function($scope, $timeout) {
     }
   };
 });
+
+app.controller('ContactsController', function($scope){
+  $scope.contacts = [];
+
+  function Contact(name, email, phone){
+    this.name = name;
+    this.email = email;
+    this.phone = phone;
+  }
+
+  $scope.addContact = function(){
+    var contact = new Contact(contactForm.name.value, contactForm.email.value, contactForm.phone.value);
+    $scope.contacts.push(contact);
+    console.log($scope.contacts);
+  };
+
+});

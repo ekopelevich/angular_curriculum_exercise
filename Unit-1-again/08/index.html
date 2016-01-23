@@ -49,10 +49,49 @@
 
       <div ng-controller="ReplayColorsController">
         <h2>Replay Colors Box</h2>
-        
+
         <div class="color-change" ng-mouseenter="randomColorFn()" ng-style="{'background-color': randomColor}"></div>
 
         <button type="button" class="btn btn-primary btn-custom" ng-click="replayColors()">Replay Colors</button>
+      </div>
+
+      <div ng-controller="ContactsController">
+        <h2>Contact List</h2>
+        <form name="contactForm" ng-submit="addContact()">
+          <label for="name">
+            Name
+            <input type="text" name="name" ng-model="contact.name">
+          </label>
+          <label for="email">
+            Email
+            <input type="text" name="email" ng-model="contact.email">
+          </label>
+          <label for="phone">
+            Phone
+            <input type="text" name="phone" ng-model="contact.phone">
+          </label>
+
+          <button class="btn btn-primary btn-custom" type="submit">Add Contact</button>
+        </form>
+
+        <div>
+          <label for="search">Search</label>
+          <input type="text" name="search" ng-model="searchContacts">
+        </div>
+
+        <table class="table table-striped">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+          <tr ng-repeat="contact in contacts | filter: searchContacts">
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.phone }}</td>
+          </tr>
+        </table>
+
       </div>
 
     </main>
