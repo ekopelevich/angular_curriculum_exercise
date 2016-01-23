@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="eventsApp">
+  <head>
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div ng-controller="EventsController">
+      <h3>The number is: {{ number }}</h3>
+      <button ng-click="pickRandomNumber()">Pick a random number!</button>
+    </div>
+
+    <div ng-controller="ReverserController">
+      <h2>Word Reverser</h2>
+      <input ng-model="word">
+      <p>Your word is: {{ word }}</p>
+      <button ng-click="reverseWord()">Reverse!</button>
+    </div>
+
+    <div ng-controller="PingPongController">
+      <h2>Ping Pong Score Keeper</h2>
+      <div ng-click="incrementScore()" class="pingpong">
+        <p>Player 1</p>
+        <h1>{{ p1.score }}</h1>
+        <p ng-show="p1.serving === true">Serving</p>
+      </div>
+      <div ng-click="incrementScore()" class="pingpong">
+        <p>Player 2</p>
+        <h1>{{ p2.score }}</h1>
+        <p ng-show="p2.serving === true">Serving</p>
+      </div>
+      <button ng-click="resetGame()">Reset!</button>
+    </div>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="events.js"></script>
+  </body>
+</html>

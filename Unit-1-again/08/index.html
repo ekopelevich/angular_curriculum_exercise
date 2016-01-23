@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="eventsApp">
+  <head>
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header>
+      <h1>Angular Events</h1>
+    </header>
+    <main>
+      <div ng-controller="EventsController">
+        <h2>Random Number Picker</h2>
+        <h3>The number is: {{ number }}</h3>
+        <button ng-click="pickRandomNumber()">Pick a random number!</button>
+      </div>
+
+      <div ng-controller="ReverserController">
+        <h2>Word Reverser</h2>
+        <input ng-model="word">
+        <p>Your word is: {{ word }}</p>
+        <button ng-click="reverseWord()">Reverse!</button>
+      </div>
+
+      <div ng-controller="PingPongController">
+        <h2>Ping Pong Score Keeper</h2>
+        <h3>Wins</h3>
+        <p>Player 1 has {{ p1.wins }} wins</p>
+        <p>Player 2 has {{ p2.wins }} wins</p>
+        <div ng-click="p1.incrementScore(); setServe(); checkEndGame()" ng-style="{'background-color': p1.bgColor}" class="pingpong">
+          <p>Player 1</p>
+          <h1>{{ p1.score }}</h1>
+          <p ng-show="p1.serving">Serving</p>
+        </div>
+        <div ng-click="p2.incrementScore(); setServe(); checkEndGame()" ng-style="{'background-color': p2.bgColor}" class="pingpong">
+          <p>Player 2</p>
+          <h1>{{ p2.score }}</h1>
+          <p ng-show="p2.serving">Serving</p>
+        </div>
+        <button class="btn btn-primary pp-btn" ng-click="resetGame()">Reset!</button>
+      </div>
+
+      <div ng-controller="ColorChangeController">
+        <h2>Color Changing Box</h2>
+        <div class="color-change" ng-mouseenter="enterCount = enterCount + 1;"></div>
+        <h3>The div was entered {{ enterCount }} times</h3>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

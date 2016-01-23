@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="validationApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <h1>Validation with Angular</h1>
+
+    <form ng-controller="valController" name="firstForm" action="javascript:void(0)">
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input ng-model="firstForm.firstName"type="text" class="form-control" id="firstname" required>
+        <label for="lastname">Last Name</label>
+        <input ng-model="firstForm.lastName" type="text" class="form-control" id="lastname" required>
+        <input ng-click="validateForm()" class="btn btn-primary" type="submit" value="Validate!">
+      </div>
+    </form>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="validation.js"></script>
+  </body>
+</html>

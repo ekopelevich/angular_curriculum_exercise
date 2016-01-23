@@ -25,3 +25,18 @@ img {
 .price {
   color: orange;
 }
+
+.pingpong {
+  width: 200px;
+  height: 200px;
+  background-color: #008cff;
+  float: left;
+  margin: 10px;
+}
+
+.pingpong p, h1 {
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-size: 2em;
+}
