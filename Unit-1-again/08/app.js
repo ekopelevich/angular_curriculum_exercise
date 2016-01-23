@@ -85,21 +85,17 @@ app.controller('PingPongController', function($scope){
 
 app.controller('ColorChangeController', function($scope) {
   $scope.enterCount = 0;
-  $scope.color={'background-color':'blue'};
+  $scope.randomColor = '#ff00a5';
 
-  $scope.enterCountFn = function($scope){
-    $scope.enterCount = $scope.enterCount++;
+  $scope.enterCountFn = function(){
+    $scope.enterCount++;
   };
 
-  $scope.changeColor = function($scope){
-    $scope.randomColor = function(){
-      var x = Math.round(0xffffff * Math.random()).toString(16);
-      var y = (6-x.length);
-      var z = "000000";
-      var z1 = z.substring(0,y);
-      var color = "#" + z1 + x;
-    };
-    $scope.color={'background-color':randomColor()};
+  $scope.randomColorFn = function(){
+    var x = Math.round(0xffffff * Math.random()).toString(16);
+    var y = (6-x.length);
+    var z = "000000";
+    var z1 = z.substring(0,y);
+    $scope.randomColor = "#" + z1 + x;
   };
-
 });

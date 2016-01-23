@@ -43,7 +43,7 @@
 
       <div ng-controller="ColorChangeController">
         <h2>Color Changing Box</h2>
-        <div class="color-change" ng-mouseenter="enterCount = enterCount + 1;"></div>
+        <div class="color-change" ng-mouseenter="enterCountFn();randomColorFn()" ng-style="{'background-color': randomColor}"></div>
         <h3>The div was entered {{ enterCount }} times</h3>
       </div>
     </main>
