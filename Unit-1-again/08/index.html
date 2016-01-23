@@ -38,7 +38,7 @@
           <h1>{{ p2.score }}</h1>
           <p ng-show="p2.serving">Serving</p>
         </div>
-        <button class="btn btn-primary pp-btn" ng-click="resetGame()">Reset!</button>
+        <button class="btn btn-primary btn-custom" ng-click="resetGame()">Reset!</button>
       </div>
 
       <div ng-controller="ColorChangeController">
@@ -46,6 +46,15 @@
         <div class="color-change" ng-mouseenter="enterCountFn();randomColorFn()" ng-style="{'background-color': randomColor}"></div>
         <h3>The div was entered {{ enterCount }} times</h3>
       </div>
+
+      <div ng-controller="ReplayColorsController">
+        <h2>Replay Colors Box</h2>
+        
+        <div class="color-change" ng-mouseenter="randomColorFn()" ng-style="{'background-color': randomColor}"></div>
+
+        <button type="button" class="btn btn-primary btn-custom" ng-click="replayColors()">Replay Colors</button>
+      </div>
+
     </main>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>

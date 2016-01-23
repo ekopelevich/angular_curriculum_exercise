@@ -99,3 +99,35 @@ app.controller('ColorChangeController', function($scope) {
     $scope.randomColor = "#" + z1 + x;
   };
 });
+
+app.controller('ReplayColorsController', function($scope, $timeout) {
+  $scope.randomColor = '#ff00a5';
+  $scope.colorHistory = [];
+
+  $scope.randomColorFn = function(){
+    var x = Math.round(0xffffff * Math.random()).toString(16);
+    var y = (6-x.length);
+    var z = "000000";
+    var z1 = z.substring(0,y);
+    $scope.randomColor = "#" + z1 + x;
+    $scope.colorHistory.push($scope.randomColor);
+  };
+
+  $scope.replayColors = function() {
+    console.log($scope.colorHistory);
+    var replayCount;
+    var replaying;
+    var displayPrevColor = function(){
+      $scope.randomColor = $scope.colorHistory.pop();
+      // $scope.colorHistory.pop();
+      replaying = false;
+      $timeout(displayPrevColor, 2000);
+    };
+    if (!replaying) {
+      replaying = true;
+      $timeout(function(){
+        displayPrevColor();
+      }, 2000);
+    }
+  };
+});
