@@ -1,0 +1,17 @@
+header, main {
+  margin: 40px;
+}
+
+div {
+  display: block;
+  float: left;
+  clear: both;
+  margin-top: 20px;
+}
+
+label, button {
+  display: block;
+  float: left;
+  clear: both;
+  margin: 10px;
+}

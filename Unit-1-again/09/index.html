@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="validationApp">
+  <head>
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header>
+      <h1>Angular Validation</h1>
+    </header>
+    <main>
+      <div ng-controller="ValidationController">
+        <form name="firstForm" action="javascript:void(0)" ng-submit="validateForm()" novalidate>
+          <label for="firstname">
+            First Name
+            <input type="text" id="firstname" ng-class="'has-error': firstForm.firstname.$invalid" required>
+          </label>
+          <p ng-show="firstForm.firstname.$invalid">This is an error message</p>
+          <label for="lastname">
+            Last Name
+            <input type="text" id="lastname" required>
+          </label>
+          <button class="btn btn-primary" type="submit">Click Me!</button>
+        </form>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
