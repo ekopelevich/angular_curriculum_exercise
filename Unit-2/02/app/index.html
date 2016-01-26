@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="digestApp">
+  <head>
+    <title>Digest Cycle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css" >
+
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <h1 class="navbar-brand">Digest Cycle Exercises</h1>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div>
+        From $rootScope: {{ name }}
+      </div>
+
+      <div  ng-controller="digestController">
+        From $scope: {{ age }}
+      </div>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+      <script src="js/controllers.js"></script>
+    </main>
+
+    <footer>
+    </footer>
+  </body>
+</html>
